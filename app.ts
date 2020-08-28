@@ -1,21 +1,15 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-    if (typeof n1 !== 'number' || typeof n2 !== 'number') {
-        throw new Error('unexpected parameter type');
-    }
+function combine(input1: number | string, input2: number | string) {
+    let result;
+    if (typeof  input1 === 'number' && typeof input2 === 'number')
+        result = input1 + input2;
+    else
+        result = input1.toString() + input2.toString();
 
-    if (showResult) {
-        console.log(phrase + n1 + n2);
-    }
-    else {
-        return n1 + n2;
-    }
+    return result;
 }
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPhrase = 'Result is: ';
+const combinedAges = combine(30, 26);
+console.log(combinedAges);
 
-const result = add(number1, number2, printResult,resultPhrase);
-
-console.log(result);
+const combinedNames = combine('Max', 'Anna');
+console.log(combinedNames);
