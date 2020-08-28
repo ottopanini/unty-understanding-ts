@@ -32,7 +32,7 @@ if (person.role === Role.ADMIN) console.log('never reached');
 // person.role.push('admin');
 // person.role[1] = 10;
 
-let favoriteActivities: string[];
+let favoriteActivities: any[];
 favoriteActivities = ['Sports'];
 
 console.log(person.name); // error
