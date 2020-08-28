@@ -14,8 +14,8 @@
 // const AUTHOR = 2;
 
 enum Role {
-    ADMIN = 5,
-    READ_ONLYn,
+    ADMIN = 'ADMIN',
+    READ_ONLYn = 100,
     AUTHOR
 }
 const person = {
