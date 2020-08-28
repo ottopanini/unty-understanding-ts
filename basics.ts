@@ -1,6 +1,9 @@
-const person: object = {
+const person: {
+    name: string;
+    age: number;
+} = {
     name: 'Maximilian',
-    áge: 30
+    age: 30
 }
 
 console.log(person.name); // error
