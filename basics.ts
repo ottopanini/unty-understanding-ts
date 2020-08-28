@@ -13,8 +13,10 @@ const person = {
     name: 'Maximilian',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
-    role: 4
+    role: 'READ ONLY'
 }
+
+if (person.role === 'READ_ONLY') console.log('never reached');
 
 // both accepted
 // person.role.push('admin');
