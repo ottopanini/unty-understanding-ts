@@ -9,14 +9,17 @@
 //     hobbies: ['Sports', 'Cooking'],
 //     role: [2, 'author']
 // }
+const ADMIN = 0;
+const READ_ONLY = 1;
+const AUTHOR = 2;
 const person = {
     name: 'Maximilian',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
-    role: 'READ ONLY'
+    role: ADMIN
 }
 
-if (person.role === 'READ_ONLY') console.log('never reached');
+// if (person.role === 'READ_ONLY') console.log('never reached');
 
 // both accepted
 // person.role.push('admin');
