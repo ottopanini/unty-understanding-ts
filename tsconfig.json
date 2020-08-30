@@ -68,5 +68,8 @@
   },
   "exclude": [
     "node_modules" // is default anyway
+  ],
+  "include": [
+    "app.ts"
   ]
 }
