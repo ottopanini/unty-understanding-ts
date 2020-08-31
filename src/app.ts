@@ -4,13 +4,13 @@ const userName = 'max';
 let age = 30;
 age = 29;
 
-const add = (a: number, b: number = a) => a + b;
-
-console.log(add(2, 5));
-
-const printOutput: (a: number|string) => void = output => console.log(output);
-
-printOutput(add(5));
+// const add = (a: number, b: number = a) => a + b;
+//
+// console.log(add(2, 5));
+//
+// const printOutput: (a: number|string) => void = output => console.log(output);
+//
+// printOutput(add(5));
 
 const button = document.querySelector<HTMLButtonElement>('button');
 if (button) {
@@ -31,3 +31,10 @@ const person = {
 };
 
 const newPerson = {...person};
+
+const add = (...numbers: number[]) => {
+    return numbers.reduce((acc, cur) => acc + cur, 0);
+}
+
+const addedNumbers = add(5, 10, 2, 3.7);
+console.log(addedNumbers);
