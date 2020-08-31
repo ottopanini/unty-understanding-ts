@@ -1,6 +1,6 @@
 class Department {
     name: string = 'DEFAULT';
-    employees: string[] = [];
+    private employees: string[] = [];
 
     constructor(n: string) {
         this.name = n;
@@ -27,8 +27,6 @@ department.describe();
 
 department.addEmploywee('Max');
 department.addEmploywee('Manu');
-
-department.employees[2] = 'anna'; // should'nt be possible
 
 department.describe();
 department.printEmployeeInfo();
