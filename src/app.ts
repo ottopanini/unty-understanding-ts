@@ -1,9 +1,11 @@
 class Department {
-    name: string = 'DEFAULT';
+    private id: string;
+    private name: string = 'DEFAULT';
     private employees: string[] = [];
 
-    constructor(n: string) {
+    constructor(id: string, n: string) {
         this.name = n;
+        this.id = id;
     }
 
     //ts safe this context
@@ -21,7 +23,7 @@ class Department {
     }
 }
 
-let department = new Department('Accounting');
+let department = new Department('Accounting', '1');
 // console.log(department);
 department.describe();
 
