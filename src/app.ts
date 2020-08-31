@@ -5,7 +5,8 @@ class Department {
         this.name = n;
     }
 
-    describe() {
+    //ts safe this context
+    describe(this: Department) {
         console.log('dep: ' + this.name);
     }
 }
@@ -14,5 +15,5 @@ let department = new Department('Accounting');
 // console.log(department);
 department.describe();
 
-const accountingCopy = { describe: department.describe };
-accountingCopy.describe(); // this undefined
+const accountingCopy = { name: 'with name works -> signature', describe: department.describe };
+accountingCopy.describe(); // now works
