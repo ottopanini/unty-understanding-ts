@@ -1,11 +1,11 @@
 class Department {
     private employees: string[] = [];
 
-    constructor(private id: string, public name: string = 'DEFAULT') {}
+    constructor(private readonly id: string, public name: string = 'DEFAULT') {}
 
     //ts safe this context
     describe(this: Department) {
-        console.log('dep: ' + this.name);
+        console.log(`dep(${this.id}): ${this.name}`);
     }
 
     addEmploywee(employee: string) {
