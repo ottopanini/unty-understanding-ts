@@ -1,8 +1,8 @@
 const userName = 'max';
 // userName = 'Maximilian';
 
-let age = 30;
-age = 29;
+// let age = 30;
+// age = 29;
 
 // const add = (a: number, b: number = a) => a + b;
 //
@@ -38,3 +38,9 @@ const add = (...numbers: [number, number, number]) => {
 
 const addedNumbers = add(5, 10, 2);
 console.log(addedNumbers);
+
+const [hobby1, hobby2, ...remaining] = hobbies;
+console.log(hobbies, hobby2, remaining);
+
+const {name: firstMame, age} = person;
+console.log(firstMame, age);
