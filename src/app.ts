@@ -32,9 +32,9 @@ const person = {
 
 const newPerson = {...person};
 
-const add = (...numbers: number[]) => {
+const add = (...numbers: [number, number, number]) => {
     return numbers.reduce((acc, cur) => acc + cur, 0);
 }
 
-const addedNumbers = add(5, 10, 2, 3.7);
+const addedNumbers = add(5, 10, 2);
 console.log(addedNumbers);
