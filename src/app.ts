@@ -20,7 +20,7 @@ if (button) {
 }
 
 const hobbies = ['Sports', 'Cooking'];
-const activeHobbies = ['Hiking'];
+const activeHobbies = ['Hiking', ...hobbies];
 
 // activeHobbies.push(hobbies[0], hobbies[1]);
-activeHobbies.push(...hobbies);
+// activeHobbies.push(...hobbies);
