@@ -1,12 +1,7 @@
 class Department {
-    private id: string;
-    private name: string = 'DEFAULT';
     private employees: string[] = [];
 
-    constructor(id: string, n: string) {
-        this.name = n;
-        this.id = id;
-    }
+    constructor(private id: string, public name: string = 'DEFAULT') {}
 
     //ts safe this context
     describe(this: Department) {
