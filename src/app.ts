@@ -13,3 +13,6 @@ class Department {
 let department = new Department('Accounting');
 // console.log(department);
 department.describe();
+
+const accountingCopy = { describe: department.describe };
+accountingCopy.describe(); // this undefined
