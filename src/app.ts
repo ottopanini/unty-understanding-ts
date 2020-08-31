@@ -4,7 +4,7 @@ const userName = 'max';
 let age = 30;
 age = 29;
 
-const add = (a: number, b: number = 1) => a + b;
+const add = (a: number, b: number = a) => a + b;
 
 console.log(add(2, 5));
 
