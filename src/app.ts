@@ -24,3 +24,10 @@ const activeHobbies = ['Hiking', ...hobbies];
 
 // activeHobbies.push(hobbies[0], hobbies[1]);
 // activeHobbies.push(...hobbies);
+
+const person = {
+    name: 'Max',
+    age: 30
+};
+
+const newPerson = {...person};
