@@ -18,6 +18,10 @@ class Department {
     }
 }
 
+class ITDepartment extends Department {
+
+}
+
 let department = new Department('Accounting', '1');
 // console.log(department);
 department.describe();
