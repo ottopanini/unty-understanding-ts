@@ -1,13 +1,11 @@
-class Department {
+abstract class Department {
     protected employees: string[] = [];
     static fiscalYear = 2010;
 
-    constructor(private readonly id: string, public name: string = 'DEFAULT') {}
+    constructor(protected readonly id: string, public name: string = 'DEFAULT') {}
 
     //ts safe this context
-    describe(this: Department) {
-        console.log(`dep(${this.id}): ${this.name}`);
-    }
+    abstract describe(this: Department): void;
 
     addEmploywee(employee: string) {
         this.employees.push(employee);
@@ -29,6 +27,10 @@ class ITDepartment extends Department {
     constructor(id: string, public admins: string[]) {
         super(id, 'IT');
     }
+
+    describe(): void {
+        console.log('IT Dep');
+    }
 }
 
 class AccountingDepartment extends Department {
@@ -46,6 +48,10 @@ class AccountingDepartment extends Department {
             throw new Error('report expected');
         }
         this.addReport(val);
+    }
+
+    describe() {
+        console.log('Accounting Dep with id:' + this.id);
     }
 
     constructor(id: string, private reports: string[]) {
@@ -93,6 +99,7 @@ accounting.addReport('second Report');
 accounting.addEmploywee('Max'); //should not be saved
 accounting.addEmploywee('Manu');
 accounting.printReports();
+accounting.describe();
 
 console.log(accounting);
 // const accountingCopy = { name: 'with name works -> signature', describe: department.describe };
