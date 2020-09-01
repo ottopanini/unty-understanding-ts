@@ -19,18 +19,42 @@ class Department {
 }
 
 class ITDepartment extends Department {
-
+    constructor(id: string, public admins: string[]) {
+        super(id, 'IT');
+    }
 }
 
-let department = new Department('Accounting', '1');
+class AccountingDepartment extends Department {
+    constructor(id: string, private reports: string[]) {
+        super(id, 'Accounting');
+    }
+
+    addReport(text: string) {
+        this.reports.push(text);
+    }
+
+    printReports() {
+        console.log(this.reports);
+    }
+}
+
+
+const itDepartment = new ITDepartment('1', ['Max']);
 // console.log(department);
-department.describe();
+itDepartment.describe();
 
-department.addEmploywee('Max');
-department.addEmploywee('Manu');
+itDepartment.addEmploywee('Max');
+itDepartment.addEmploywee('Manu');
 
-department.describe();
-department.printEmployeeInfo();
+itDepartment.describe();
+itDepartment.printEmployeeInfo();
 
+console.log(itDepartment);
+
+const accounting = new AccountingDepartment('2', ['initial Report']);
+accounting.addReport('second Report');
+accounting.printReports();
+
+console.log(accounting);
 // const accountingCopy = { name: 'with name works -> signature', describe: department.describe };
 // accountingCopy.describe(); // now works
