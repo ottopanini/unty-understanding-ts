@@ -25,8 +25,18 @@ class ITDepartment extends Department {
 }
 
 class AccountingDepartment extends Department {
+    private lastReport: string;
+
+    get recentReport() {
+        if (this.lastReport) {
+            return this.lastReport;
+        }
+        throw new Error('no report found.');
+    }
+
     constructor(id: string, private reports: string[]) {
         super(id, 'Accounting');
+        this.lastReport = reports[reports.length - 1];
     }
 
     addEmploywee(employee: string) {
@@ -39,6 +49,7 @@ class AccountingDepartment extends Department {
 
     addReport(text: string) {
         this.reports.push(text);
+        this.lastReport = text;
     }
 
     printReports() {
@@ -59,7 +70,8 @@ itDepartment.printEmployeeInfo();
 
 console.log(itDepartment);
 
-const accounting = new AccountingDepartment('2', ['initial Report']);
+const accounting = new AccountingDepartment('2', []);
+console.log(accounting.recentReport);
 accounting.addReport('second Report');
 accounting.addEmploywee('Max'); //should not be saved
 accounting.addEmploywee('Manu');
