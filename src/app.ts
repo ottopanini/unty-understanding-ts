@@ -78,7 +78,7 @@ itDepartment.printEmployeeInfo();
 console.log(itDepartment);
 
 const accounting = new AccountingDepartment('2', []);
-accounting.recentReport = '';
+accounting.recentReport = 'first';
 accounting.addReport('second Report');
 accounting.addEmploywee('Max'); //should not be saved
 accounting.addEmploywee('Manu');
