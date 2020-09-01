@@ -35,6 +35,7 @@ class ITDepartment extends Department {
 
 class AccountingDepartment extends Department {
     private lastReport: string;
+    private static instance: AccountingDepartment;
 
     get recentReport() {
         if (this.lastReport) {
@@ -54,9 +55,16 @@ class AccountingDepartment extends Department {
         console.log('Accounting Dep with id:' + this.id);
     }
 
-    constructor(id: string, private reports: string[]) {
+    private constructor(id: string, private reports: string[]) {
         super(id, 'Accounting');
         this.lastReport = reports[reports.length - 1];
+    }
+
+    static getInstance() {
+        if (!AccountingDepartment.instance) {
+            AccountingDepartment.instance =  new AccountingDepartment('2', []);
+        }
+        return AccountingDepartment.instance;
     }
 
     addEmploywee(employee: string) {
@@ -93,7 +101,8 @@ itDepartment.printEmployeeInfo();
 
 console.log(itDepartment);
 
-const accounting = new AccountingDepartment('2', []);
+const accounting = AccountingDepartment.getInstance();
+const accounting2 = AccountingDepartment.getInstance();
 accounting.recentReport = 'first';
 accounting.addReport('second Report');
 accounting.addEmploywee('Max'); //should not be saved
@@ -101,6 +110,6 @@ accounting.addEmploywee('Manu');
 accounting.printReports();
 accounting.describe();
 
-console.log(accounting);
+console.log(accounting, accounting2);
 // const accountingCopy = { name: 'with name works -> signature', describe: department.describe };
 // accountingCopy.describe(); // now works
