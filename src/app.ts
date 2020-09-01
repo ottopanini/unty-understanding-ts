@@ -9,7 +9,8 @@ add = (n1: number, n2: number) => {
 
 
 interface Named {
-    readonly name: string;
+    readonly name?: string;
+    outputname?: string;
 }
 interface Greetable extends Named {
     greet(phrase: string): void;
@@ -18,7 +19,7 @@ interface Greetable extends Named {
 class Person implements Greetable {
     age = 30;
 
-    constructor(public name: string) {
+    constructor(public name?: string) {
     }
 
     greet(): void {
