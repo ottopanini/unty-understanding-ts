@@ -16,3 +16,12 @@ user1 = {
 }
 
 user1.greet('Hi there - I am');
+
+class Customer implements Person {
+     age: number = 1;
+     name: string = 'ert';
+
+     greet(): void {
+     }
+
+ }
