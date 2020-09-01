@@ -29,6 +29,14 @@ class AccountingDepartment extends Department {
         super(id, 'Accounting');
     }
 
+    addEmploywee(employee: string) {
+        if (employee === 'Max') {
+            return;
+        }
+
+        super.addEmploywee(employee);
+    }
+
     addReport(text: string) {
         this.reports.push(text);
     }
@@ -53,6 +61,8 @@ console.log(itDepartment);
 
 const accounting = new AccountingDepartment('2', ['initial Report']);
 accounting.addReport('second Report');
+accounting.addEmploywee('Max'); //should not be saved
+accounting.addEmploywee('Manu');
 accounting.printReports();
 
 console.log(accounting);
