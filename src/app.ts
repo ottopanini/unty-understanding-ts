@@ -1,6 +1,11 @@
-interface Greetable {
-    readonly name: string;
+type AddFn = (a: number, b: number) => number;
 
+let add: AddFn;
+
+interface Named {
+    readonly name: string;
+}
+interface Greetable extends Named {
     greet(phrase: string): void;
 }
 
