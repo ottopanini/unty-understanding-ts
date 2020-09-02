@@ -112,5 +112,7 @@ interface ErrorContainer {
     [prop: string]: string;
 }
 
-const errorBag: ErrorContainer = {};
+const errorBag: ErrorContainer = {
+    1: 'not a valid email!'
+};
 
