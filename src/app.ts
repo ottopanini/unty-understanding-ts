@@ -103,5 +103,5 @@ function moveAnimal(animal: Animal) {
 
 moveAnimal({type: 'bird', flyingSpeed: 20});
 
-const userINput = <HTMLInputElement> document.getElementById('user-input')!; //: simply HTMLElement infered
+const userINput = document.getElementById('user-input')! as HTMLInputElement; //: simply HTMLElement infered
 userINput.value = 'hi there!';
