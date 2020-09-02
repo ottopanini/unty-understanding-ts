@@ -109,8 +109,8 @@ if (userINput) {
 }
 
 interface ErrorContainer {
-    id: string;
-    // index: number; not allowed because index type is already string
     [prop: string]: string;
 }
+
+const errorBag: ErrorContainer = {};
 
