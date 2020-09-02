@@ -29,6 +29,12 @@ function add(a: Combinable, b: Combinable) {
     return a + b;
 }
 
+const result = add('Max', 'Schwarz');
+// result.split(' '); won't work with string | number
+
+
+
+/*
 type UnknownEmployee = Employee | Admin;
 
 function printEmployeeInformation(emp: UnknownEmployee) {
@@ -116,3 +122,4 @@ const errorBag: ErrorContainer = {
     1: 'not a valid email!'
 };
 
+*/
