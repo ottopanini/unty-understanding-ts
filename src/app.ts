@@ -107,3 +107,10 @@ const userINput = document.getElementById('user-input'); //: simply HTMLElement 
 if (userINput) {
     (userINput as HTMLInputElement).value = 'hi there!';
 }
+
+interface ErrorContainer {
+    id: string;
+    // index: number; not allowed because index type is already string
+    [prop: string]: string;
+}
+
