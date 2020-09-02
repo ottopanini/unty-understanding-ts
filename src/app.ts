@@ -71,3 +71,6 @@ function useVehicle(vehicle: Vehicle) {
     if (vehicle instanceof Truck)
         vehicle.loadCargo(1000);
 }
+
+useVehicle(v1);
+useVehicle(v2);
